@@ -58,6 +58,14 @@ static const char *log_firstbyte_time(request_rec *r, char *a) {
   } else if (!strcasecmp(a, "ms")) {
     duration = apr_time_as_msec(duration);
   } else if (!strcasecmp(a, "us")) {
+  } else if (!strcasecmp(a, "F")) {
+    return apr_psprintf(r->pool, "%" APR_TIME_T_FMT, cf->first_out_time);
+  } else if (!strcasecmp(a, "R")) {
+    return apr_psprintf(r->pool, "%" APR_TIME_T_FMT, cf->req_read_time);
+  } else if (!strcasecmp(a, "start")) {
+    return apr_psprintf(r->pool, "%" APR_TIME_T_FMT, r->request_time);
+  } else if (!strcasecmp(a, "fin")) {
+    return apr_psprintf(r->pool, "%" APR_TIME_T_FMT, apr_time_now());
   } else {
     /* bogus format */
     return a;
