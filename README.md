@@ -22,6 +22,9 @@ Just add the %F into the LogFormat directive you happen to use on your apache2 s
 
 `LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D %F" combined-with-firstbyte`
 
+Or using the format:
+`LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D %{ms}F" combined-with-firstbyte`
+
 Finally, change the CustomLog directive:
 
 `CustomLog /var/log/apache2/access.log combined-with-firstbyte`
