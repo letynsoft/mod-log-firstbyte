@@ -5,7 +5,7 @@ This module lets you log the **time spent processing the request** excluding the
 
 The module adds a new option to your log format string: '`%F`'.
 
-This is an updated clone of https://code.google.com/archive/p/mod-log-firstbyte
+This is an updated clone of https://code.google.com/archive/p/mod-log-firstbyte.
 
 This version adds the format parameter to the `%F` (`%{s}F` - seconds, `%{ms}F` - miliseconds, `%{us}F` - microseconds), the default is microseconds.
 
